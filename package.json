@@ -1,0 +1,15 @@
+{
+    "name": "lab1",
+    "version": "1.0.0",
+    "description": "lab1",
+    "main": "app.js",
+    "dependencies": {},
+    "devDependencies": {
+        "jest": "^27.2.1"
+    },
+    "scripts": {
+        "test": "jest"
+    },
+    "author": "Marat",
+    "license": "ISC"
+}
