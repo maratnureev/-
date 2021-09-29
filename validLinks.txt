@@ -1,0 +1,78 @@
+[
+	{
+		"path": "http://91.210.252.240/broken-links/",
+		"status": 200
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/index.html",
+		"status": 200
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/about.html",
+		"status": 200
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/work.html",
+		"status": 200
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/pricing.html",
+		"status": 200
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/blog.html",
+		"status": 200
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/../links/movedper.php",
+		"status": 301
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/contact.html",
+		"status": 200
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/https://colorlib.com",
+		"status": 200
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/blog-single.html",
+		"status": 200
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/https://colorlib.com",
+		"status": 200
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/../links/found302.php",
+		"status": 302
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/https://colorlib.com",
+		"status": 200
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/https://colorlib.com",
+		"status": 200
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/https://colorlib.com",
+		"status": 200
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/../links/no204content.php",
+		"status": 204
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/https://colorlib.com",
+		"status": 200
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/https://colorlib.com",
+		"status": 200
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/https://colorlib.com",
+		"status": 200
+	}
+]
