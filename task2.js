@@ -15,9 +15,9 @@ async function findBrokenLinks(path) {
         return
     }
     if (path.startsWith("http://") || path.startsWith("https://") || path.startsWith("ftp://")) {
-        // if ()        
-        // validLinks.push({ path: path, status: 200 })
-        // checkedLinks.push(path)
+        if (!checkedLinks.includes(path))
+            validLinks.push({ path: path, status: 200 })
+        checkedLinks.push(path)
         return
     }
     checkedLinks.push(endpoint)
