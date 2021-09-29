@@ -15,7 +15,9 @@ async function findBrokenLinks(path) {
         return
     }
     if (path.startsWith("http://") || path.startsWith("https://") || path.startsWith("ftp://")) {
-        validLinks.push({ path: path, status: 200 })
+        // if ()        
+        // validLinks.push({ path: path, status: 200 })
+        // checkedLinks.push(path)
         return
     }
     checkedLinks.push(endpoint)
@@ -33,6 +35,12 @@ async function findBrokenLinks(path) {
     }
 }
 
-await findBrokenLinks("")
-fs.writeFileSync('brokenLinks.txt', JSON.stringify(brokenLinks, null, '\t'))
-fs.writeFileSync('validLinks.txt', JSON.stringify(validLinks, null, '\t'))
+async function asyncFindBrokenLinks() {
+    await findBrokenLinks("")
+    fs.writeFileSync('brokenLinks.txt', JSON.stringify(brokenLinks, null, '\t'))
+    fs.appendFileSync('brokenLinks.txt', brokenLinks.length.toString())
+    fs.writeFileSync('validLinks.txt', JSON.stringify(validLinks, null, '\t'))
+    fs.appendFileSync('validLinks.txt', validLinks.length.toString())
+}
+
+asyncFindBrokenLinks()

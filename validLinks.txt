@@ -32,15 +32,7 @@
 		"status": 200
 	},
 	{
-		"path": "http://91.210.252.240/broken-links/https://colorlib.com",
-		"status": 200
-	},
-	{
 		"path": "http://91.210.252.240/broken-links/blog-single.html",
-		"status": 200
-	},
-	{
-		"path": "http://91.210.252.240/broken-links/https://colorlib.com",
 		"status": 200
 	},
 	{
@@ -48,31 +40,7 @@
 		"status": 302
 	},
 	{
-		"path": "http://91.210.252.240/broken-links/https://colorlib.com",
-		"status": 200
-	},
-	{
-		"path": "http://91.210.252.240/broken-links/https://colorlib.com",
-		"status": 200
-	},
-	{
-		"path": "http://91.210.252.240/broken-links/https://colorlib.com",
-		"status": 200
-	},
-	{
 		"path": "http://91.210.252.240/broken-links/../links/no204content.php",
 		"status": 204
-	},
-	{
-		"path": "http://91.210.252.240/broken-links/https://colorlib.com",
-		"status": 200
-	},
-	{
-		"path": "http://91.210.252.240/broken-links/https://colorlib.com",
-		"status": 200
-	},
-	{
-		"path": "http://91.210.252.240/broken-links/https://colorlib.com",
-		"status": 200
 	}
-]
+]11
