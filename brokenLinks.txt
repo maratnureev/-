@@ -1,0 +1,42 @@
+[
+	{
+		"path": "http://91.210.252.240/broken-links/../links/locked.php",
+		"status": 423
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/tel://1234567920",
+		"status": 403
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/mailto:info@yoursite.com",
+		"status": 403
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/../links/404not404found404.php",
+		"status": 404
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/../links/return500bad.php",
+		"status": 500
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/../links/deny403forbidden.php",
+		"status": 403
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/../links/502gateaway502.php",
+		"status": 502
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/../links/teapot418.php",
+		"status": 500
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/../links/un503availible.php",
+		"status": 503
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/../links/access401unauthorized.php",
+		"status": 401
+	}
+]
