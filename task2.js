@@ -25,9 +25,22 @@ async function findBrokenLinks(path) {
     if (response.status < 400) {
         validLinks.push({ path: endpoint, status: response.status })
         const root = parser.parse(await response.text())
-        const aTags = root.querySelectorAll('a')
-        for (let aTag of aTags) {
-            const path = aTag.getAttribute('href')
+        let hrefTags = root.querySelectorAll('a')
+        let srcTags = root.querySelectorAll('img')
+        let actionTags = root.querySelectorAll('form')
+        srcTags = srcTags.concat(root.querySelectorAll('script'))
+        srcTags = srcTags.concat(root.querySelectorAll('iframe'))
+        hrefTags = hrefTags.concat(root.querySelectorAll('link'))
+        for (let srcTag of srcTags) {
+            const path = srcTag.getAttribute('src')
+            await findBrokenLinks(path)
+        }
+        for (let hrefTag of hrefTags) {
+            const path = hrefTag.getAttribute('href')
+            await findBrokenLinks(path)
+        }
+        for (let actionTag of actionTags) {
+            const path = actionTag.getAttribute('action')
             await findBrokenLinks(path)
         }
     } else {
@@ -38,9 +51,11 @@ async function findBrokenLinks(path) {
 async function asyncFindBrokenLinks() {
     await findBrokenLinks("")
     fs.writeFileSync('brokenLinks.txt', JSON.stringify(brokenLinks, null, '\t'))
-    fs.appendFileSync('brokenLinks.txt', brokenLinks.length.toString())
+    fs.appendFileSync('brokenLinks.txt', "\n" + brokenLinks.length.toString())
+    fs.appendFileSync('brokenLinks.txt', "\n" + new Date().toString())
     fs.writeFileSync('validLinks.txt', JSON.stringify(validLinks, null, '\t'))
-    fs.appendFileSync('validLinks.txt', validLinks.length.toString())
+    fs.appendFileSync('validLinks.txt', "\n" + validLinks.length.toString())
+    fs.appendFileSync('validLinks.txt', "\n" + new Date().toString())
 }
 
 asyncFindBrokenLinks()

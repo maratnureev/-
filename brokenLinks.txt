@@ -1,5 +1,13 @@
 [
 	{
+		"path": "http://91.210.252.240/broken-links///view.vzaar.com/'+f.id+'/player?autoplay=true",
+		"status": 404
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/%url%",
+		"status": 400
+	},
+	{
 		"path": "http://91.210.252.240/broken-links/../links/locked.php",
 		"status": 423
 	},
@@ -13,6 +21,10 @@
 	},
 	{
 		"path": "http://91.210.252.240/broken-links/../links/404not404found404.php",
+		"status": 404
+	},
+	{
+		"path": "http://91.210.252.240/broken-links/images/noimage.jpg",
 		"status": 404
 	},
 	{
@@ -39,4 +51,6 @@
 		"path": "http://91.210.252.240/broken-links/../links/access401unauthorized.php",
 		"status": 401
 	}
-]10
+]
+13
+Thu Sep 30 2021 12:05:41 GMT+0300 (GMT+03:00)
