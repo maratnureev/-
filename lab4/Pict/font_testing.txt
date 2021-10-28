@@ -1,0 +1,24 @@
+FontStyle: Arial, Calibri, Times New Roman, Tahoma
+FontSize: 1, 8, 20, 36, 72, 4000
+Inscription: none, bold, italic, bold italic
+FontColor: black, red, green
+Underline: none, solid, double solid, dotted, dashed
+Underline color: none, black, red, green
+Crossed out: true, false
+Double crossed out: true, false
+Superscript: true, false
+Subscript: true, false
+Small caps: true, false
+All cals: true, false
+Text align: true, false
+Shift: -100, -50, 0, 50, 100
+
+if [Underline] = "none" THEN [Underline color] = "none";
+if [Crossed out] = "true" THEN [Double crossed out] = "false";
+if [Double crossed out] = "true" THEN [Crossed out] = "false";
+if [Superscript] = "true" THEN [Subscript] = "false";
+if [Subscript] = "true" THEN [Superscript] = "false";
+if [Small caps] = "true" THEN [All cals] = "false";
+if [All cals] = "true" THEN [Small caps] = "false";
+if [Superscript] = "true" THEN [Shift] > 0;
+if [Subscript] = "true" THEN [Shift] < 0;

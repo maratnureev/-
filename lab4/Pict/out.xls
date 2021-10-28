@@ -1,0 +1,37 @@
+FontStyle	FontSize	Inscription	FontColor	Underline	Underline color	Crossed out	Double crossed out	Superscript	Subscript	Small caps	All cals	Text align	Shift
+Tahoma	8	none	black	dotted	none	false	false	false	false	true	false	true	-50
+Times New Roman	36	italic	green	double solid	red	false	true	true	false	false	true	false	100
+Calibri	8	bold italic	red	solid	black	true	false	true	false	false	false	false	50
+Arial	1	bold	red	dashed	green	false	true	false	true	false	true	true	-100
+Tahoma	20	bold	green	dotted	green	true	false	false	false	false	true	false	0
+Calibri	36	bold italic	black	dashed	black	false	true	false	true	true	false	false	-50
+Arial	1	italic	black	double solid	red	true	false	true	false	true	false	true	50
+Times New Roman	1	bold italic	green	none	none	true	false	false	false	true	false	true	100
+Calibri	1	none	black	solid	none	false	true	false	false	false	true	true	0
+Times New Roman	72	none	red	double solid	red	true	false	false	true	false	true	false	-50
+Tahoma	4000	italic	red	none	none	false	true	false	false	false	true	false	50
+Calibri	72	bold	green	solid	green	false	true	false	false	true	false	false	-100
+Arial	36	italic	green	dotted	black	true	false	false	true	false	true	true	-100
+Arial	8	none	black	dashed	green	true	false	true	false	false	true	false	100
+Tahoma	4000	bold italic	black	solid	red	true	false	false	true	true	false	true	-100
+Arial	20	italic	red	solid	none	false	true	false	true	true	false	true	-50
+Times New Roman	72	italic	black	dashed	black	false	true	false	false	true	false	true	0
+Times New Roman	36	bold italic	red	dotted	green	false	true	true	false	false	true	false	50
+Arial	8	bold	black	none	none	false	true	false	false	false	true	false	0
+Tahoma	1	bold	red	dotted	black	false	true	true	false	false	false	false	100
+Times New Roman	8	none	green	double solid	none	false	true	false	true	false	true	true	-100
+Calibri	20	bold	green	dashed	red	false	true	true	false	false	false	false	100
+Calibri	1	bold	green	double solid	green	false	true	false	true	false	true	true	-50
+Tahoma	36	none	red	none	none	false	true	false	false	false	true	true	0
+Arial	72	bold italic	green	dotted	none	false	true	true	false	false	true	false	50
+Arial	4000	none	green	dashed	black	false	false	true	false	false	true	true	50
+Calibri	20	none	black	none	none	true	false	false	true	true	false	false	-100
+Times New Roman	36	italic	black	solid	green	false	true	false	false	false	true	false	100
+Times New Roman	4000	bold italic	red	double solid	red	false	false	false	false	false	true	true	0
+Calibri	8	italic	green	dotted	red	false	true	false	true	false	true	false	-50
+Tahoma	72	bold	black	none	none	false	true	true	false	false	false	false	100
+Tahoma	36	bold	black	double solid	black	true	false	false	false	true	false	false	50
+Times New Roman	20	bold italic	green	double solid	black	false	true	true	false	false	true	true	50
+Calibri	4000	bold	black	dotted	green	false	true	true	false	false	true	false	100
+Times New Roman	4000	bold	green	none	none	false	true	false	true	false	true	true	-50
+Tahoma	4000	none	black	dashed	none	false	true	false	false	false	false	false	50
