@@ -70,31 +70,16 @@ namespace CarTests
 			Assert.IsTrue(isEngineTurnedOn);
 			Assert.IsTrue(gear == -1);
 			Assert.IsTrue(speed == 0);
+			Assert.IsTrue(car.GetDirection() == CCar.Directions.STAY);
+
 		}
 
-		[TestMethod]
-		public void TestCase3()
-		{
-			CCar car = new CCar();;
-			car.TurnOnEngine();
-			car.SetGear(1);
-			string message;
-			car.SetGear(-1);
-			int gear = car.GetGear();
-			int speed = car.GetSpeed();
-			bool isEngineTurnedOn = car.IsTurnedOn();
-			Assert.IsTrue(isEngineTurnedOn);
-			Assert.IsTrue(gear == -1);
-			Assert.IsTrue(speed == 0);
-		}
-		 
 		[TestMethod]
 		public void TestCase4()
 		{
 			CCar car = new CCar();;
 			car.TurnOnEngine();
 			car.SetGear(1);
-			string message;
 			car.SetSpeed(10);
 			Assert.ThrowsException<InvalidGearException>(() => car.SetGear(-1));
 			int gear = car.GetGear();
@@ -103,6 +88,8 @@ namespace CarTests
 			Assert.IsTrue(isEngineTurnedOn);
 			Assert.IsTrue(gear == 1);
 			Assert.IsTrue(speed == 10);
+			Assert.IsTrue(car.GetDirection() == CCar.Directions.FORWARD);
+
 		}
 
 		[TestMethod]
@@ -120,6 +107,8 @@ namespace CarTests
 			Assert.IsTrue(isEngineTurnedOn);
 			Assert.IsTrue(gear == 0);
 			Assert.IsTrue(speed == 10);
+			Assert.IsTrue(car.GetDirection() == CCar.Directions.BACKWARD);
+
 		}
 
 		[TestMethod]
@@ -128,7 +117,6 @@ namespace CarTests
 			CCar car = new CCar();;
 			car.TurnOnEngine();
 			car.SetGear(1);
-			string message;
 			car.SetSpeed(20);
 			car.SetGear(2);
 			int gear = car.GetGear();
@@ -137,6 +125,8 @@ namespace CarTests
 			Assert.IsTrue(isEngineTurnedOn);
 			Assert.IsTrue(gear == 2);
 			Assert.IsTrue(speed == 20);
+			Assert.IsTrue(car.GetDirection() == CCar.Directions.FORWARD);
+
 		}
 
 		[TestMethod]
@@ -145,7 +135,6 @@ namespace CarTests
 			CCar car = new CCar();;
 			car.TurnOnEngine();
 			car.SetGear(1);
-			string message;
 			car.SetSpeed(30);
 			car.SetGear(3);
 			int gear = car.GetGear();
@@ -154,6 +143,8 @@ namespace CarTests
 			Assert.IsTrue(isEngineTurnedOn);
 			Assert.IsTrue(gear == 3);
 			Assert.IsTrue(speed == 30);
+			Assert.IsTrue(car.GetDirection() == CCar.Directions.FORWARD);
+
 		}
 
 		[TestMethod]
@@ -162,7 +153,6 @@ namespace CarTests
 			CCar car = new CCar();;
 			car.TurnOnEngine();
 			car.SetGear(1);
-			string message;
 			car.SetSpeed(20);
 			Assert.ThrowsException<InvalidGearException>(() => car.SetGear(3));
 			int gear = car.GetGear();
@@ -171,6 +161,8 @@ namespace CarTests
 			Assert.IsTrue(isEngineTurnedOn);
 			Assert.IsTrue(gear == 1);
 			Assert.IsTrue(speed == 20);
+			Assert.IsTrue(car.GetDirection() == CCar.Directions.FORWARD);
+
 		}
 
 		[TestMethod]
@@ -179,15 +171,12 @@ namespace CarTests
 			CCar car = new CCar();;
 			car.TurnOnEngine();
 			car.SetGear(1);
-			string message;
 			car.SetSpeed(30);
 			car.SetGear(2);
 			car.SetSpeed(40);
 			car.SetGear(4);
 			int gear = car.GetGear();
 			int speed = car.GetSpeed();
-			bool isEngineTurnedOn = car.IsTurnedOn();
-			Assert.IsTrue(isEngineTurnedOn);
 			Assert.IsTrue(gear == 4);
 			Assert.IsTrue(speed == 40);
 		}
@@ -198,7 +187,6 @@ namespace CarTests
 			CCar car = new CCar();;
 			car.TurnOnEngine();
 			car.SetGear(1);
-			string message;
 			car.SetSpeed(30);
 			car.SetGear(2);
 			car.SetSpeed(40);
@@ -207,8 +195,6 @@ namespace CarTests
 			car.SetGear(5);
 			int gear = car.GetGear();
 			int speed = car.GetSpeed();
-			bool isEngineTurnedOn = car.IsTurnedOn();
-			Assert.IsTrue(isEngineTurnedOn);
 			Assert.IsTrue(gear == 5);
 			Assert.IsTrue(speed == 90);
 		}
@@ -228,10 +214,31 @@ namespace CarTests
 			Assert.ThrowsException<InvalidEngineOffStateException>(() => car.TurnOffEngine());
 			int gear = car.GetGear();
 			int speed = car.GetSpeed();
-			bool isEngineTurnedOn = car.IsTurnedOn();
-			Assert.IsTrue(isEngineTurnedOn);
 			Assert.IsTrue(gear == 5);
 			Assert.IsTrue(speed == 90);
+			Assert.IsTrue(car.GetDirection() == CCar.Directions.FORWARD);
+		}
+
+		[TestMethod]
+		public void TestCaseMaxSpeed()
+		{
+			CCar car = new CCar(); ;
+			car.TurnOnEngine();
+			car.SetGear(1);
+			car.SetSpeed(30);
+			car.SetGear(2);
+			car.SetSpeed(40);
+			car.SetGear(4);
+			car.SetSpeed(60);
+			car.SetGear(5);
+			car.SetSpeed(150);
+			Assert.ThrowsException<InvalidEngineOffStateException>(() => car.TurnOffEngine());
+			int gear = car.GetGear();
+			int speed = car.GetSpeed();
+			Assert.IsTrue(gear == 5);
+			Assert.IsTrue(speed == 150);
+			Assert.IsTrue(car.GetDirection() == CCar.Directions.FORWARD);
+
 		}
 
 		[TestMethod]
@@ -249,10 +256,9 @@ namespace CarTests
 			Assert.ThrowsException<InvalidEngineOffStateException>(() => car.TurnOffEngine());
 			int gear = car.GetGear();
 			int speed = car.GetSpeed();
-			bool isEngineTurnedOn = car.IsTurnedOn();
-			Assert.IsTrue(isEngineTurnedOn);
 			Assert.IsTrue(gear == 0);
 			Assert.IsTrue(speed == 90);
+			Assert.IsTrue(car.GetDirection() == CCar.Directions.FORWARD);
 		}
 
 		[TestMethod]
@@ -266,10 +272,9 @@ namespace CarTests
 			car.SetSpeed(9);
 			int gear = car.GetGear();
 			int speed = car.GetSpeed();
-			bool isEngineTurnedOn = car.IsTurnedOn();
-			Assert.IsTrue(isEngineTurnedOn);
 			Assert.IsTrue(gear == 0);
 			Assert.IsTrue(speed == 9);
+			Assert.IsTrue(car.GetDirection() == CCar.Directions.BACKWARD);
 		}
 
 		[TestMethod]
@@ -283,10 +288,9 @@ namespace CarTests
 			Assert.ThrowsException<InvalidSpeedException>(() => car.SetSpeed(20));
 			int gear = car.GetGear();
 			int speed = car.GetSpeed();
-			bool isEngineTurnedOn = car.IsTurnedOn();
-			Assert.IsTrue(isEngineTurnedOn);
 			Assert.IsTrue(gear == 0);
 			Assert.IsTrue(speed == 10);
+			Assert.IsTrue(car.GetDirection() == CCar.Directions.FORWARD);
 		}
 
 		[TestMethod]
@@ -295,12 +299,9 @@ namespace CarTests
 			CCar car = new CCar();;
 			car.TurnOnEngine();
 			car.SetGear(1);
-			string message;
 			Assert.ThrowsException<InvalidSpeedException>(() => car.SetSpeed(40));
 			int gear = car.GetGear();
 			int speed = car.GetSpeed();
-			bool isEngineTurnedOn = car.IsTurnedOn();
-			Assert.IsTrue(isEngineTurnedOn);
 			Assert.IsTrue(gear == 1);
 			Assert.IsTrue(speed == 0);
 		}
@@ -309,12 +310,9 @@ namespace CarTests
 		{
 			CCar car = new CCar();;
 			car.TurnOnEngine();
-			string message;
 			Assert.ThrowsException<InvalidGearException>(() => car.SetGear(-2));
 			int gear = car.GetGear();
 			int speed = car.GetSpeed();
-			bool isEngineTurnedOn = car.IsTurnedOn();
-			Assert.IsTrue(isEngineTurnedOn);
 			Assert.IsTrue(gear == 0);
 			Assert.IsTrue(speed == 0);
 		}

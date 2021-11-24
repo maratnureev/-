@@ -60,9 +60,9 @@ public class CCar
 		}
 		if (m_speed == 0)
 		{
-			return Directions.BACKWARD;
+			return Directions.STAY;
 		}
-		return Directions.STAY;
+		return Directions.BACKWARD;
 	}
 
 	public int GetSpeed()
